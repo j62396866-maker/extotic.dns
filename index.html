@@ -3,80 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXOTIC DNS - Protection de votre Système</title>
+    <title>Exotic - Hub de Sécurité</title>
     <style>
+        :root {
+            --bg: #0a0c10;
+            --card: #161b22;
+            --cyan: #22d3ee;
+            --blue: #0ea5e9;
+            --text: #c9d1d9;
+        }
         body {
-            background-color: #050505;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             margin: 0;
-            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .header {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(145deg, #1a1a1a, #000);
-            border-bottom: 3px solid #00ff41;
-            margin-bottom: 30px;
+        .hub-container {
+            background: var(--card);
+            width: 100%;
+            max-width: 600px;
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
         }
-        h1 { color: #00ff41; letter-spacing: 2px; text-transform: uppercase; }
-        .warning-box {
-            background: rgba(255, 0, 0, 0.1);
-            border: 1px solid #ff0000;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+        .header { text-align: center; margin-bottom: 2rem; }
+        h1 { 
+            background: linear-gradient(90deg, var(--cyan), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.2rem;
+            margin: 0;
         }
-        .step {
-            background: #111;
-            padding: 20px;
-            border-left: 4px solid #00ff41;
-            margin-bottom: 15px;
-            border-radius: 0 8px 8px 0;
+        .badge {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--cyan);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid var(--cyan);
+            text-transform: uppercase;
         }
-        .step h3 { color: #00ff41; margin-top: 0; }
-        code {
-            background: #222;
-            padding: 2px 6px;
-            color: #00ff41;
-            border-radius: 4px;
+        .grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .footer { text-align: center; margin-top: 50px; font-size: 0.8rem; color: #444; }
+        .label { color: var(--cyan); font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; display: block; }
+        code { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #fff; word-break: break-all; }
+        .warning {
+            border-left: 4px solid #f87171;
+            background: rgba(248, 113, 113, 0.05);
+            padding: 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .footer { text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.4; }
     </style>
 </head>
 <body>
 
+<div class="hub-container">
     <div class="header">
-        <h1>EXOTIC DNS v2.0</h1>
-        <p>Neutralisation des menaces et injections Malvertising</p>
+        <span class="badge">Infrastucture Live</span>
+        <h1>Exotic Hub</h1>
+        <p>Portail de sécurisation réseau et filtrage DNS.</p>
     </div>
 
-    <div class="warning-box">
-        <strong>⚠️ RETOUR D'EXPÉRIENCE :</strong> Nos domaines <code>pub.pinkmail</code> et <code>arbrns.com</code> ont été la cible d'injections binaires (.exe) provoquant des erreurs <code>MEMORY_MANAGEMENT</code>. Cette page vous explique comment vous protéger.
+    <div class="warning">
+        <strong>Avis aux utilisateurs :</strong> Suite à des injections malveillantes tierces (.exe), les accès publicitaires ont été neutralisés. Ce hub centralise désormais les outils de protection.
     </div>
 
-    <h2>🛡️ Comment installer la protection ?</h2>
+    <div class="grid">
+        <div class="info-card">
+            <span class="label">DNS-over-HTTPS (DoH)</span>
+            <code>https://dns.nextdns.io/7c5c7e</code>
+        </div>
+        
+        <div class="info-box info-card">
+            <span class="label">Cloud Endpoint</span>
+            <code>7c5c7e.dns.nextdns.io</code>
+        </div>
 
-    <div class="step">
-        <h3>1. Configuration du DNS (PC/Opera GX)</h3>
-        <p>Allez dans les paramètres de votre navigateur ou de Windows. Remplacez vos DNS par nos serveurs de filtrage <strong>NextDNS</strong>. Cela bloque les scripts Adsterra avant qu'ils ne touchent votre mémoire RAM.</p>
-    </div>
-
-    <div class="step">
-        <h3>2. Protection de la Box (TP-Link)</h3>
-        <p>Accédez à l'interface de votre <strong>Box TP-Link NX511V</strong>. Dans l'onglet Réseau/DHCP, entrez l'adresse de notre passerelle Exotic. Tous les appareils de la maison (Switch, PC, Smartphones) seront instantanément protégés.</p>
-    </div>
-
-    <div class="step">
-        <h3>3. Nettoyage de sécurité</h3>
-        <p>Après chaque navigation sur des sites à risque, utilisez <strong>CCleaner</strong> pour vider les fichiers temporaires et le cache DNS. C'est la garantie que les "miettes" de scripts malveillants ne resteront pas sur votre disque.</p>
+        <div class="info-card">
+            <span class="label">IPv6 Adresses (Box TP-Link)</span>
+            <code>2a07:a8c0::7c:5c7e</code><br>
+            <code>2a07:a8c1::7c:5c7e</code>
+        </div>
     </div>
 
     <div class="footer">
-        Projet Exotic DNS - Développé pour la sécurité de la Chambre Minecraft et au-delà.<br>
-        Statut système : SÉCURISÉ
+        Exotic Project • 2026 • Protection Native Activée
     </div>
+</div>
 
 </body>
 </html>
